@@ -47,8 +47,6 @@ export const NoFOUCScript = (storageKey: string) => {
     document.documentElement.setAttribute("data-mode", mode);
     restoreTransitions();
   };
-  window.updateDOM();
-  media.addEventListener("change", window.updateDOM);
 };
 
 let updateDOM: () => void;
@@ -61,7 +59,7 @@ const Switch = () => {
     () =>
       ((typeof localStorage !== "undefined" &&
         localStorage.getItem(STORAGE_KEY)) ??
-        "system") as ColorSchemePreference,
+        "system") as ColorSchemePreference
   );
 
   useEffect(() => {
@@ -101,7 +99,7 @@ const Script = memo(() => (
 ));
 
 /**
- * This component wich applies classes and transitions.
+ * This component which applies classes and transitions.
  */
 export const ThemeSwitcher = () => {
   return (
